@@ -3,7 +3,7 @@ import Buytoken from './Buytoken';
 import Redeemtoken from './Redeemtoken';
 import "./tokenplace.css";
 
-const Tokenpage = ({account}) => {
+const Tokenpage = ({account, tokenCount, buyToken, redeemToken}) => {
     return (
         <div>
             <div className="topbar">
@@ -11,11 +11,11 @@ const Tokenpage = ({account}) => {
                     Account Number: {account}
                 </div>
                 <div className="tokens">
-                    Current Token Count
+                    Current Token Count: {tokenCount}
                 </div>
             </div>
-            <Buytoken/>
-            <Redeemtoken/>
+            <Buytoken buyToken={buyToken}/>
+            <Redeemtoken redeemToken={redeemToken}/>
         </div>
     )
 }
