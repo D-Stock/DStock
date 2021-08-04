@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NavigationTabs({account,captureFile,earnings,tokenCount,uploadAsset,buyAsset}) {
+export default function NavigationTabs({account,captureFile,earnings,tokenCount,uploadAsset,buyAsset,buyToken,redeemToken}) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -77,7 +77,12 @@ export default function NavigationTabs({account,captureFile,earnings,tokenCount,
       </TabPanel>
       <TabPanel value={value} index={1}>
         {/* <Tokenplace/> */}
-        <Tokenplace account={account}/>
+        <Tokenplace 
+                account = {account}
+                tokenCount = {tokenCount}
+                buyToken = {buyToken} 
+                redeemToken = {redeemToken}
+                />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <Creatorpage 
